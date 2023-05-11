@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="desplazamiento.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#seccion1">Caballo 1 </a></li>
+      <li><a href="#seccion2">Caballo 2</a></li>
+      <li><a href="#seccion3">Caballo3</a></li>
+    </ul>
+  </nav>
+
+  <div id="seccion1" class="seccion">
+    <img src="caballo1.jpeg" onclick="openModal(this)" alt="Imagen 1">
+   
+    
+  </div>
+
+  <div id="seccion2" class="seccion">
+    <img src="caballo2.jpg.crdownload" onclick="openModal(this)" alt="Imagen 2">
+  </div>
+
+  <div id="seccion3" class="seccion">
+    <img src="caballo3.jpg.crdownload" onclick="openModal(this)" alt="Imagen 3">
+  </div>
+
+  <script >document.addEventListener("DOMContentLoaded", function() {
+    // Obtener todos los enlaces de navegación
+    var navLinks = document.querySelectorAll("nav a");
+  
+    // Agregar un evento de clic a cada enlace de navegación
+    navLinks.forEach(function(link) {
+      link.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+  
+        var targetId = this.getAttribute("href"); // Obtener el ID del objetivo de la sección
+        var targetElement = document.querySelector(targetId); // Obtener el elemento de destino
+  
+        // Desplazarse suavemente hacia la sección de destino
+        targetElement.scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+  });</script>
+</body>
+</html>
