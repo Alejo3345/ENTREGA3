@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Lista de tareas</title>
+   <style>
+    ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+   </style>
+  </head>
+  <body>
+    
+    <h1>Lista de tareas</h1>
+    <ul id="lista-tareas">
+    </ul>
+    <input type="text" id="nueva-tarea" />
+    <button id="agregar-tarea">Agregar tarea</button>
+    <script >const listaTareas = document.getElementById('lista-tareas');
+        const nuevaTarea = document.getElementById('nueva-tarea');
+        const agregarTarea = document.getElementById('agregar-tarea');
+        
+        agregarTarea.addEventListener('click', function() {
+          const tareaTexto = nuevaTarea.value.trim();
+        
+          if (tareaTexto !== '') {
+            const nuevaTareaElemento = document.createElement('li');
+            nuevaTareaElemento.innerText = tareaTexto;
+            listaTareas.appendChild(nuevaTareaElemento);
+            nuevaTarea.value = '';
+          }
+        });
+        
+        listaTareas.addEventListener('click', function(evento) {
+          if (evento.target.tagName === 'LI') {
+            evento.target.remove();
+          }
+        });</script>
+  </body>
+</html>

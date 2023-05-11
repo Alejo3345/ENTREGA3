@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>select {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+  }</style>
+    <label for="dias-semana">Días de la semana:</label>
+<select id="dias-semana"></select>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU DESPLEGABLE</title>
+</head>
+<body>
+    <script >const diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+        const select = document.getElementById("dias-semana");
+        
+        for (let i = 0; i < diasSemana.length; i++) {
+          const option = document.createElement("option");
+          option.text = diasSemana[i];
+          select.add(option);
+        }</script>
+</body>
+</html>
